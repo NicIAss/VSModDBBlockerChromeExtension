@@ -1,0 +1,58 @@
+/* Vintage Story ModDB Blocker */
+
+.vsmoddb-blocker-faded {
+  opacity: 0.12 !important;
+  filter: grayscale(1) !important;
+  transition: opacity 0.15s ease-in-out, filter 0.15s ease-in-out !important;
+}
+
+.vsmoddb-blocker-faded:hover {
+  opacity: 0.5 !important;
+}
+
+.vsmoddb-blocker-blank {
+  visibility: hidden !important;
+}
+
+.vsmoddb-blocker-remove {
+  display: none !important;
+}
+
+
+/* Experimental per-card hide button */
+
+.vsmoddb-blocker-card-actions {
+  position: absolute !important;
+  top: 6px !important;
+  right: 6px !important;
+  z-index: 20 !important;
+  display: flex !important;
+  gap: 4px !important;
+}
+
+.vsmoddb-blocker-hide-button {
+  border: 1px solid rgba(0, 0, 0, 0.25) !important;
+  border-radius: 4px !important;
+  padding: 3px 7px !important;
+  font-size: 11px !important;
+  line-height: 1.2 !important;
+  cursor: pointer !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  color: #222 !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
+
+.vsmoddb-blocker-hide-button:hover {
+  background: #ffe0e0 !important;
+}
+
+div.mod.published {
+  position: relative !important;
+}
+
+
+/* Hidden-until-scanned mode */
+
+.vsmoddb-blocker-unscanned {
+  visibility: hidden !important;
+}

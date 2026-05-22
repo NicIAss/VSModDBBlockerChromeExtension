@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>VS ModDB Blocker</title>
+  <style>
+    body {
+      min-width: 380px;
+      margin: 0;
+      padding: 14px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    h1 {
+      font-size: 16px;
+      margin: 0 0 4px;
+    }
+
+    .sub {
+      font-size: 11px;
+      color: #555;
+      margin-bottom: 12px;
+      line-height: 1.35;
+    }
+
+    h2 {
+      font-size: 13px;
+      margin: 16px 0 6px;
+      padding-top: 10px;
+      border-top: 1px solid #ddd;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      margin: 10px 0 4px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 58px;
+      resize: vertical;
+      box-sizing: border-box;
+      font-family: inherit;
+      font-size: 13px;
+      padding: 8px;
+    }
+
+    select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 7px;
+      font-size: 13px;
+    }
+
+    code {
+      background: #e9e9e9;
+      padding: 1px 4px;
+      border-radius: 4px;
+    }
+
+    .hint {
+      font-size: 11px;
+      color: #555;
+      margin-top: 4px;
+      line-height: 1.35;
+    }
+
+    .row {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    button {
+      flex: 1;
+      border: 0;
+      padding: 9px 10px;
+      cursor: pointer;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    #save {
+      background: #315f7d;
+      color: white;
+    }
+
+    #clearCache {
+      background: #ddd;
+      color: #222;
+    }
+
+    #status {
+      min-height: 18px;
+      margin-top: 10px;
+      font-size: 12px;
+      color: #245b2a;
+    }
+  </style>
+</head>
+<body>
+  <h1>VS ModDB Blocker</h1>
+  <div class="sub">
+    Version 5.6 Allows users of the Vintage Story Moddb to use advanced filters like Block tags, Block authors, Block mods, Block keywords in description, Allow keywords and lets you either make them less visable or hide them completely.
+  </div>
+
+  <h2>Block list</h2>
+
+  <label for="authors">Blocked authors</label>
+  <textarea id="authors" placeholder="One exact author name per line"></textarea>
+  <div class="hint">Exact match only. Example: <code>l33tmaan</code></div>
+
+  <label for="mods">Blocked individual mods</label>
+  <textarea id="mods" placeholder="One exact mod name, assetid, or modid per line"></textarea>
+  <div class="hint">Examples: <code>Cantina Atlas</code>, <code>32289</code>, or <code>5444</code>.</div>
+
+  <label for="keywords">Blocked keywords</label>
+  <textarea id="keywords" placeholder="One keyword rule per line"></textarea>
+  <div class="hint">
+    Plain <code>AI</code> = contains anywhere. <code>"AI"</code> or <code>word:AI</code> = free-standing word only.
+  </div>
+
+  <label for="tags">Blocked tags</label>
+  <textarea id="tags" placeholder="One exact tag name per line"></textarea>
+  <div class="hint">Exact tag match only. Example: <code>Tweak</code>.</div>
+
+  <h2>Keyword allow list</h2>
+
+  <label for="allowedKeywords">Allowed keywords</label>
+  <textarea id="allowedKeywords" placeholder="One keyword rule per line"></textarea>
+  <div class="hint">
+    Example: block <code>"AI"</code>, but allow <code>"no AI"</code>. Same rule syntax as blocked keywords.
+  </div>
+
+  <label for="hideMode">Hide mode</label>
+  <select id="hideMode">
+    <option value="fade">Fade / transparent</option>
+    <option value="blank">Blank space</option>
+    <option value="remove">Remove completely</option>
+  </select>
+
+  <label for="debugScanMode">Scan display mode</label>
+  <select id="debugScanMode">
+    <option value="normal">Normal: hide cards until scanned</option>
+    <option value="debug">Debug: show cards while scanning</option>
+  </select>
+  <div class="hint">
+    Debug mode keeps the old behavior so you can watch cards get checked and hidden one by one.
+  </div>
+
+  <div class="row">
+    <button id="save">Save</button>
+    <button id="clearCache">Clear API cache</button>
+  </div>
+
+  <div id="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

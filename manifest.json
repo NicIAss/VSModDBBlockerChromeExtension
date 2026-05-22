@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Vintage Story ModDB Blocker",
+  "version": "5.6.0",
+  "description": "Allows users of the Vintage Story Moddb to use advanced filters like Block tags, Block authors, Block mods, Block keywords in description, Allow keywords and lets you either make them less visable or hide them completely.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://mods.vintagestory.at/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://mods.vintagestory.at/list/mod*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "VS ModDB Blocker",
+    "default_popup": "popup.html"
+  }
+}
