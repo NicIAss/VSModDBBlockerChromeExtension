@@ -28,4 +28,4 @@ You can use it to:
 
 A short tutorial video is available here:
 
-[![Watch the tutorial](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/maxresdefault.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+[![Watch the tutorial](https://img.youtube.com/vi/7mRAwnLbfR8/maxresdefault.jpg)](https://www.youtube.com/watch?v=7mRAwnLbfR8)
