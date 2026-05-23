@@ -740,7 +740,7 @@
       const cardsToScan = cards.filter(card => card.dataset.vsmoddbBlockerScanned !== "true");
 
       for (const card of cardsToScan) {
-        await processCard(card);
+        processCard(card);
       }
     } finally {
       isScanning = false;
